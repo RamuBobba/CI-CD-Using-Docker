@@ -31,16 +31,16 @@ pipeline {
           }
         }
      
-  stage('Publish image to Docker Hub') {
+  //stage('Publish image to Docker Hub') {
           
-            steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-          sh  'docker push ramubobba/samplewebapp:latest'
+     //       steps {
+    //    withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+    //      sh  'docker push ramubobba/samplewebapp:latest'
         //  sh  'docker push ramubobba/samplewebapp:$BUILD_NUMBER' 
-        }
+   //     }
                   
-          }
-        }
+   //       }
+   //     }
      
       stage('Run Docker container on Jenkins Agent') {
              
